@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Extractor de Tabla",
+  "version": "1.0",
+  "description": "Extrae información de una tabla específica.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "popup.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

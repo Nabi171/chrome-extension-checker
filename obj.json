@@ -1,0 +1,82 @@
+[
+    {
+        "name": "BitcomTxm",
+        "value": "0.985",
+        "currency": "USD",
+        "quantity": "101.71 USDT",
+        "paymentMethod": "Depósito en efectivo al banco",
+        "buttonText": "Comprar USDT"
+    },
+    {
+        "name": "CambiosXavick",
+        "value": "0.985",
+        "currency": "USD",
+        "quantity": "80.89 USDT",
+        "paymentMethod": "Zinli",
+        "buttonText": "Comprar USDT"
+    },
+    {
+        "name": "GOLDENFAMILY",
+        "value": "0.985",
+        "currency": "USD",
+        "quantity": "349.02 USDT",
+        "paymentMethod": "Zinli",
+        "buttonText": "Comprar USDT"
+    },
+    {
+        "name": "AngelCryp",
+        "value": "0.985",
+        "currency": "USD",
+        "quantity": "324.41 USDT",
+        "paymentMethod": "Zinli",
+        "buttonText": "Comprar USDT"
+    },
+    {
+        "name": "antuwans_new",
+        "value": "0.986",
+        "currency": "USD",
+        "quantity": "268.38 USDT",
+        "paymentMethod": "Zinli",
+        "buttonText": "Comprar USDT"
+    },
+    {
+        "name": "E-Musk10",
+        "value": "0.987",
+        "currency": "USD",
+        "quantity": "1,233.06 USDT",
+        "paymentMethod": "Zinli",
+        "buttonText": "Comprar USDT"
+    },
+    {
+        "name": "Olympia_10",
+        "value": "0.988",
+        "currency": "USD",
+        "quantity": "349.00 USDT",
+        "paymentMethod": "Zinli",
+        "buttonText": "Comprar USDT"
+    },
+    {
+        "name": "Incubus-Rolife",
+        "value": "0.988",
+        "currency": "USD",
+        "quantity": "1,921.58 USDT",
+        "paymentMethod": "Zinli",
+        "buttonText": "Comprar USDT"
+    },
+    {
+        "name": "JarvisP2P",
+        "value": "0.988",
+        "currency": "USD",
+        "quantity": "376.63 USDT",
+        "paymentMethod": "Zinli",
+        "buttonText": "Comprar USDT"
+    },
+    {
+        "name": "Memphis_10",
+        "value": "0.988",
+        "currency": "USD",
+        "quantity": "753.73 USDT",
+        "paymentMethod": "Zinli",
+        "buttonText": "Comprar USDT"
+    }
+]
