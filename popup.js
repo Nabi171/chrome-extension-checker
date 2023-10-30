@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
             chrome.scripting.executeScript(
                 {
                     target: { tabId: tabs[0].id },
-                    function: extractKucoinTableData,
+                    function: extractPatchfulData,
                 },
                 function (results) {
                     console.log(results);
@@ -359,4 +359,39 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// 
+
+
+function extractPatchfulData() {
+    const rows = document.querySelectorAll('tr.bn-table-row');
+    const rows2 = document.querySelectorAll('div#p2pConverter div.react-app div div.row div div div');
+    console.log('row2',rows2)
+    const data = [];
+    const data2 = [];
+
+    rows2.forEach(row => {
+        const Btc = row.querySelector('div')?.innerText;
+        const name2 = row.querySelector('div');
+
+
+        data2.push({
+            Btc,
+            name2
+            
+        });
+    });
+
+    console.log(data2);
+
+    rows.forEach(row => {
+        const name = row.querySelector('td:nth-child(1) a').innerText;
+
+
+        data.push({
+            name,
+
+        });
+    });
+
+    console.log(data);
+    return data;
+}
