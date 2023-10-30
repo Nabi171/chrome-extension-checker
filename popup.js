@@ -298,31 +298,64 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function extractKucoinTableData() {
         // const rows = document.querySelectorAll('tbody.tr.css-tjxdah');
-        const rows = document.querySelectorAll('tbody.css-1d9xc1d.tr.css-tjxdah');
-        
-        const data = [];
-        // const elements = document.querySelectorAll('.lrtcss-wvb4h0 e191uany9').innerText;
-        const element= document.getElementsByClassName('lrtcss-rc7umy').innerText;
-
-         console.log('the element is',element)
-    //  elements.forEach(element => {
-    //     const innerText = element.innerText;
-    //     console.log('the ineervalues are',innerText);
-    // });
+        const data3=[]
+        const rows3 = document.querySelectorAll('tbody tr.css-tjxdah');
 
 
-        rows.forEach(row => {
-            const datavalueOne = row.querySelector('td:nth-child(0) .name_RErOG').innerText;
-            
 
-            data.push({
-                dataValueOne,
-               
+
+        rows3.forEach(row => {
+            const name3 = row.querySelector('td').innerText;
+
+
+            data3.push({
+                name3,
+       
             });
         });
 
+        console.log(data3);
+        // return data3;
+    // }
+
+
+
+
+        // console.log('rows3',rows3[0]);
+
+
+
+
+      
+        const data2 = [];
+        const elements= document.querySelector('th.css-16tlf0q');
+        const datas=elements.innerText
+   
+        const rows = document.querySelector('tbody tr.css-tjxdah');
+        // console.log(rows)
+        const data = [];
+         
+        // rows.forEach(row => {
+            const name = rows.querySelector('td').innerText;
+   
+
+            data.push({
+                name,
+           
+            });
+        // });
+
+
+
+            data2.push({
+            
+                datas
+            });
+
+
         console.log('this is data',data)
-        return data;
+        console.log('this is data2',data2)
+        return data,data2;
     }
 });
 
