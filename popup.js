@@ -236,8 +236,8 @@ document.addEventListener('DOMContentLoaded', function () {
 function extractPatchfulData() {
 
     const rows2 = document.querySelectorAll('div#p2pConverter div.react-app div div.row div div div');
-    const rows3 = document.querySelector('div#p2pConverter div.react-app div div.row div div div');
-    console.log('row3',rows3)
+    // const rows3 = document.querySelector('div#p2pConverter div.react-app div div.row div div div');
+    // console.log('row3',rows3)
     const data2 = [];
 
     rows2.forEach(row => {
@@ -357,10 +357,17 @@ function extractPatchfulData() {
         const Value111= row.querySelector('div#react-select-2-option-1-55 span:nth-child(2)')?.innerText;
         const Value112= row.querySelector('div#react-select-2-option-1-56 span:nth-child(1)')?.innerText;
         const Value113= row.querySelector('div#react-select-2-option-1-56 span:nth-child(2)')?.innerText;
-       //done
+  
+       const Value114= row.querySelector('div#react-select-2-option-0-1 span:nth-child(1)')?.innerText;
+       const Value115= row.querySelector('div#react-select-2-option-0-1 span:nth-child(2)')?.innerText;
+       const Value116= row.querySelector('div#react-select-2-option-0-2 span:nth-child(1)')?.innerText;
+       const Value117= row.querySelector('div#react-select-2-option-0-2 span:nth-child(2)')?.innerText;
+       const Value118= row.querySelector('div#react-select-2-option-0-3 span:nth-child(1)')?.innerText;
+       const Value119= row.querySelector('div#react-select-2-option-0-3 span:nth-child(2)')?.innerText;
+       const Value120= row.querySelector('div#react-select-2-option-0-4 span:nth-child(1)')?.innerText;
+       const Value121= row.querySelector('div#react-select-2-option-0-4 span:nth-child(2)')?.innerText;
 
-
-
+     //done
         data2.push({
             Btc,
             Amount,
@@ -476,7 +483,15 @@ function extractPatchfulData() {
             Value110,
             Value111,
             Value112,
-            Value113,
+            Value114,
+            Value115,
+            Value116,
+            Value117,
+            Value118,
+            Value119,
+            Value120,
+            Value121,
+          
            
            
 
