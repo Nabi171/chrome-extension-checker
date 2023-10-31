@@ -188,48 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
- function extractKucoinTableData() {
-        // const rows = document.querySelectorAll('tbody.tr.css-tjxdah');
-        const data3=[]
-        const rows3 = document.querySelectorAll('tbody tr.css-tjxdah');
 
-        rows3.forEach(row => {
-            const name3 = row.querySelector('td').innerText;
-            data3.push({
-                name3,
-       
-            });
-        });
-        console.log(data3);
-      
-        const data2 = [];
-        const elements= document.querySelector('th.css-16tlf0q');
-        const datas=elements.innerText
-   
-        const rows = document.querySelector('tbody tr.css-tjxdah');
-        // console.log(rows)
-        const data = [];
-         
-        // rows.forEach(row => {
-            const name = rows.querySelector('td').innerText;
-   
-
-            data.push({
-                name,
-           
-            });
-        // });
-
-            data2.push({
-           
-                datas
-            });
-
-        console.log('this is data',data)
-        console.log('this is data2',data2)
-        return data,data2;
-    }
-});
 
 
 
@@ -501,3 +460,36 @@ function extractPatchfulData() {
     console.log(data2);
     return data2;
 }
+
+
+
+function extractKucoinTableData() {
+    // const rows = document.querySelectorAll('tbody.tr.css-tjxdah');
+    const data3=[]
+    const rows3 = document.querySelectorAll('tbody tr.css-tjxdah');
+    // const rows4= document.querySelector('tbody tr.css-tjxdah');
+    // console.log(rows4)
+
+    rows3.forEach(row => {
+        const name3 = row.querySelector('td')?.innerText;
+        const name4 = row.querySelector('td:nth-child(1) div.defaultAvatar_uWq46')?.innerText;
+        const name5= row.querySelector('td:nth-child(1) div.title_vmUdH')?.innerText;
+        const name6= row.querySelector('td:nth-child(1) div.orderNo_jRTnE span:nth-child(1)')?.innerText;
+        const name7= row.querySelector('td:nth-child(1) div.orderNo_jRTnE span:nth-child(2)')?.innerText;
+        const name8= row.querySelector('td:nth-child(1) div.orderNo_jRTnE span:nth-child(3)')?.innerText;
+        data3.push({
+            name3,
+            name4,
+            name5,
+            name6,
+            name7,
+            name8,
+   
+        });
+    });
+    console.log(data3);
+  
+  
+    return data3;
+}
+});
