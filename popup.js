@@ -311,9 +311,9 @@ function extractPatchfulData() {
         let quantity = row.querySelector('div.card>div:nth-child(2)> div:nth-child(1)')?.innerText;
         const price = row.querySelector('div.card>div:nth-child(2)> div:nth-child(2)')?.innerText;
 
-        // Check if operator is defined and not an empty string
+     
         if (operator && operator.trim() !== '') {
-            // Remove the equal sign (=) from the quantity
+            
             quantity = quantity ? quantity.replace('=', '').trim() : quantity;
 
             data.push({
