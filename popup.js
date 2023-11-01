@@ -115,6 +115,55 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+    document.getElementById('extractOkxBtn').addEventListener('click', function () {
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    
+            chrome.scripting.executeScript(
+                {
+                    target: { tabId: tabs[0].id },
+                    function:extractOkxData,
+                },
+                function (results) {
+                    console.log(results);
+                    if (chrome.runtime.lastError) {
+                        console.error(chrome.runtime.lastError);
+                    } else {
+                        let extractedData = results[0].result;
+                        console.log(extractedData);
+    
+                        extractedData.forEach((dataItem, index) => {
+                            let mappedData = {
+                                "id": index + 1,
+                                "crypto_id": 1,
+                                "exchange_id": 1,
+                                "country_id": 1,
+                                "operator": dataItem.name,
+                                "quantity": parseFloat(dataItem.quantity.replace(' USDT', '').replace(',', '')),
+                                "price": parseFloat(dataItem.value),
+                                "usdt": parseFloat(dataItem.quantity.replace(' USDT', '').replace(',', '')),
+                                "fiat": 1,
+                                "method": dataItem.paymentMethod,
+                                "type": dataItem.buttonText,
+                                "datetime": new Date().toISOString().split('T')[0] + " 00:00:00",
+                                "created_at": new Date().toISOString(),
+                                "updated_at": new Date().toISOString()
+                            };
+    
+                            // Send data to an API endpoint (commented out)
+                            // You would need to uncomment and provide the actual API endpoint details to send the data.
+                        });
+                    }
+                });
+        });
+    });
+
+  
+
+
+
+
+
+
     document.getElementById('extractPaxfulBtn').addEventListener('click', function () {
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     
@@ -493,3 +542,47 @@ function extractKucoinTableData() {
     return data3;
 }
 });
+
+
+
+
+
+
+function extractOkxData() {
+    const rows = document.querySelectorAll('div.merchant span');
+    const rows2 = document.querySelector('div.merchant span');
+    const rows3 = document.querySelectorAll('tbody.okui-table-tbody ');
+
+    console.log(rows2)
+    console.log(rows3)
+    const data = [];
+    const data2 = [];
+
+    rows.forEach(row => {
+        const name = row.querySelector('span.merchant-name-section ')?.innerText;
+        const name2 = row.querySelector('div.trading-summary ')?.innerText;
+        
+
+        data.push({
+            name,
+            name2,
+
+        });
+    });
+    
+    rows3.forEach(row => {
+        const name = row.querySelector('tr:nth-child(1) td:nth-child(1)')?.innerText;
+       
+        
+
+        data2.push({
+            name,
+           
+
+        });
+    });
+
+    console.log(data);
+    console.log(data2);
+    return data,data2;
+}
