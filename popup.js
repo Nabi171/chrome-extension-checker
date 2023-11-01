@@ -304,8 +304,7 @@ function extractPatchfulData() {
     // const rows = document.querySelectorAll('div#p2pConverter div:nth-child(1) ');
     const rows = document.querySelectorAll('div#p2pConverter>div.react-app> div.mt-5>div.row>div ');
     // console.log(rows)
-    const rows2 = document.querySelector('div#p2pConverter div.row div');
-    console.log('r2',rows2)
+  
 
 
     
@@ -313,9 +312,9 @@ function extractPatchfulData() {
     const data = [];
 
     rows.forEach(row => {
-        const operator = row.querySelector('div.card div.card-header')?.innerText;
-        const quantity = row.querySelector('div.card div:nth-child(2) div:nth-child(1)')?.innerText;
-        const price = row.querySelector('div.card div:nth-child(2) div:nth-child(2)')?.innerText;
+        const operator = row.querySelector('div.card>div.card-header')?.innerText;
+        const quantity = row.querySelector('div.card>div:nth-child(2)> div:nth-child(1)')?.innerText;
+        const price = row.querySelector('div.card>div:nth-child(2)> div:nth-child(2)')?.innerText;
     
 
         
