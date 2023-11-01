@@ -300,38 +300,32 @@ function extractOkxData() {
 }
 
 
+
 function extractPatchfulData() {
-    // const rows = document.querySelectorAll('div#p2pConverter div:nth-child(1) ');
     const rows = document.querySelectorAll('div#p2pConverter>div.react-app> div.mt-5>div.row>div ');
-    // console.log(rows)
-  
 
-
-    
- 
     const data = [];
 
     rows.forEach(row => {
         const operator = row.querySelector('div.card>div.card-header')?.innerText;
-        const quantity = row.querySelector('div.card>div:nth-child(2)> div:nth-child(1)')?.innerText;
+        let quantity = row.querySelector('div.card>div:nth-child(2)> div:nth-child(1)')?.innerText;
         const price = row.querySelector('div.card>div:nth-child(2)> div:nth-child(2)')?.innerText;
-    
 
-        
+        // Check if operator is defined and not an empty string
+        if (operator && operator.trim() !== '') {
+            // Remove the equal sign (=) from the quantity
+            quantity = quantity ? quantity.replace('=', '').trim() : quantity;
 
-        data.push({
-        operator,
-        quantity,
-        price,
-       
-
-      
-        });
+            data.push({
+                operator,
+                quantity,
+                price,
+            });
+        }
     });
-    
-
 
     console.log(data);
-  
+
     return data;
 }
+
