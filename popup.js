@@ -301,10 +301,11 @@ function extractOkxData() {
 
 
 function extractPatchfulData() {
-    const rows = document.querySelectorAll('div#p2pConverter div.react-app div.mt-5 div.row div ');
+    // const rows = document.querySelectorAll('div#p2pConverter div:nth-child(1) ');
+    const rows = document.querySelectorAll('div#p2pConverter>div.react-app> div.mt-5>div.row>div ');
     // console.log(rows)
-    // const rows2 = document.querySelector('div#p2pConverter div.react-app div.mt-5 div.row div');
-    // console.log('r2',rows2)
+    const rows2 = document.querySelector('div#p2pConverter div.row div');
+    console.log('r2',rows2)
 
 
     
