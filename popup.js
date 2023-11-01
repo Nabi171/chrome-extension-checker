@@ -96,8 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                
                             };
     
-                            // Send data to an API endpoint (commented out)
-                            // You would need to uncomment and provide the actual API endpoint details to send the data.
+                           
                         });
                     }
                 });
@@ -136,8 +135,6 @@ document.addEventListener('DOMContentLoaded', function () {
                               
                             };
     
-                            // Send data to an API endpoint (commented out)
-                            // You would need to uncomment and provide the actual API endpoint details to send the data.
                         });
                     }
                 });
@@ -178,8 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 
                             };
     
-                            // Send data to an API endpoint (commented out)
-                            // You would need to uncomment and provide the actual API endpoint details to send the data.
+                           
                         });
                     }
                 });
@@ -219,37 +215,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function extractKucoinTableData() {
-    // const rows = document.querySelectorAll('tbody.tr.css-tjxdah');
+  
     const data=[]
     const rowskucoins= document.querySelectorAll('tbody tr.css-tjxdah');
-    // const rows4= document.querySelector('tbody tr.css-tjxdah');
-    // console.log(rows4)
+  
 
     rowskucoins.forEach(row => {
-        // const name3 = row.querySelector('td')?.innerText;
-        // const merchantTitle = row.querySelector('td:nth-child(1) div.defaultAvatar_uWq46')?.innerText;
         const operator= row.querySelector('td:nth-child(1) div.title_vmUdH')?.innerText;
         const price= row.querySelector('td:nth-child(2) span:nth-child(1)')?.innerText;
-        // const amountIn= row.querySelector('td:nth-child(2) span:nth-child(2)')?.innerText;//optional
         const quantity= row.querySelector('td:nth-child(3) div.amount_WSpyu div')?.innerText;
-        // const availableIn= row.querySelector('td:nth-child(3) div.amount_WSpyu div span')?.innerText;//optional
-        // const name55= row.querySelector('td:nth-child(3)  div.amount_WSpyu div')?.innerText;
-        // const name56= row.querySelector('td:nth-child(3)  div.amount_WSpyu div span')?.innerText;
-        // const orderLimit= row.querySelector('td:nth-child(3)  div.limitAmount_qwBV4 div ')?.innerText;
-        // const orderLimitIn= row.querySelector('td:nth-child(3)  div.limitAmount_qwBV4 div span')?.innerText;//optional
-        // const merchantOrders= row.querySelector('td:nth-child(1) div.orderNo_jRTnE span:nth-child(1)')?.innerText;
-        // const name7= row.querySelector('td:nth-child(1) div.orderNo_jRTnE span:nth-child(2)')?.innerText;
-        // const merchantOrdersInPercentage= row.querySelector('td:nth-child(1) div.orderNo_jRTnE span:nth-child(3)')?.innerText;
+        
         data.push({
-            // name3,
-        //  merchantTitle,
-        operator,
+         operator,
          price,
          quantity,
-        //  orderLimit,
-        //  merchantOrders,
-        //  merchantOrdersInPercentage
-   
+          
         });
     });
     console.log(data);
@@ -269,24 +249,15 @@ function extractOkxData() {
 
     rows.forEach(row => {
         const operator = row.querySelector('td:nth-child(1) span.merchant-name-section')?.innerText;
-        // const transactions = row.querySelector('td:nth-child(1) div.trading-summary span:nth-child(1)')?.innerText;
-        // const percentageIntransaction = row.querySelector('td:nth-child(1) div.trading-summary span:nth-child(3) div')?.innerText;
         const price = row.querySelector('td:nth-child(2) span.price')?.innerText;
-        // const orderLimit  = row.querySelector('td:nth-child(3) div.quantity-and-limit div:nth-child(1)')?.innerText;
         const quantity = row.querySelector('td:nth-child(3) div.quantity-and-limit div:nth-child(2)')?.innerText;
         const method = row.querySelector('td:nth-child(4) div:nth-child(1) div:nth-child(1)')?.innerText;
-        // const paymentMethod2 = row.querySelector('td:nth-child(4) div:nth-child(2) div:nth-child(2)')?.innerText;
-        
-
+   
         data.push({
             operator,
-            // transactions,
-            // percentageIntransaction,
             price,
             quantity,
-            // orderLimit,
             method,
-            // paymentMethod2,
 
 
         });
